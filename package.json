@@ -1,0 +1,38 @@
+{
+  "name": "eslint-plugin-react-custom-rules",
+  "version": "1.0.0",
+  "description": "A collection of rules specific to a custom workflow and pattern.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "adalbertoteixeira",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "eslint": "~3.9.1",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.1.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.3.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  }
+}

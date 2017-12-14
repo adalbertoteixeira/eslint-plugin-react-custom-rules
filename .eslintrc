@@ -1,0 +1,17 @@
+{
+  "extends": "eslint:recommended",
+  "plugins": [
+      "standard",
+      "promise"
+  ],
+  "env": {
+    "amd": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}

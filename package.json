@@ -34,5 +34,13 @@
     "doc": "docs",
     "lib": "lib",
     "test": "tests"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adalbertoteixeira/eslint-plugin-react-custom-rules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adalbertoteixeira/eslint-plugin-react-custom-rules/issues"
+  },
+  "homepage": "https://github.com/adalbertoteixeira/eslint-plugin-react-custom-rules#readme"
 }

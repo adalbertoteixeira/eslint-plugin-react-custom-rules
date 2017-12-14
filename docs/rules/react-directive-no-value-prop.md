@@ -1,6 +1,8 @@
 # React directive breaks if a property named &#34;value&#34; is used. We should not use it. (react-directive-no-value-prop)
 
-Please describe the origin of the rule here.
+The react in angular library does not work well with properties named `value`. It causes all sort os issues when updating the components.
+
+This rule dissalows the usage of a property named `value`.
 
 
 ## Rule Details
@@ -10,27 +12,46 @@ This rule aims to...
 Examples of **incorrect** code for this rule:
 
 ```js
+  // No `value` prop in `reactDirective`.
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, ['value']);
+  const otherFunction = () => somethingElse(Selector, ['value']);
 
-// fill me in
+  // No `value` prop in arrays being passed in.
+  const properties = ['value'];
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, properties);
+
+  const properties = [
+    'value',
+    'test',
+    'prop',
+  ];
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, properties);
 
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, ['prop']);
 
-// fill me in
+  const properties = ['prop'];
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, properties);
+
+  const properties = ['prop'];
+  const array = ['value'];
+  const ReactSelector = reactDirective =>
+    reactDirective(Selector, properties);
+
+  const properties = ['prop', 'other'];
+  const array = ['value'];
+  const ReactSelector = reactDirective =>
+    reactDirective(value, properties);
+`,
+  }
 
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

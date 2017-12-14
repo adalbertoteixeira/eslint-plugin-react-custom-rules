@@ -24,30 +24,30 @@ ruleTester.run("react-directive-no-value-prop", rule, {
     valid: [
       {
         code: `
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, ['prop']);
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, ['prop']);
         `,
       },
       {
         code: `
           const properties = ['prop'];
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, properties);
-        `,
-      },
-      {
-        code: `
-          const properties = ['prop'];
-          const array = ['value'];
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, properties);
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, properties);
         `,
       },
       {
         code: `
           const properties = ['prop'];
           const array = ['value'];
-          const ReactBrandSelector = reactDirective =>
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, properties);
+        `,
+      },
+      {
+        code: `
+          const properties = ['prop', 'other'];
+          const array = ['value'];
+          const ReactSelector = reactDirective =>
             reactDirective(value, properties);
         `,
       }
@@ -56,9 +56,9 @@ ruleTester.run("react-directive-no-value-prop", rule, {
     invalid: [
       {
         code: `
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, ['value']);
-          const otherFunction = () => somethingElse(BrandSelector, ['value']);
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, ['value']);
+          const otherFunction = () => somethingElse(Selector, ['value']);
         `,
         errors: [{
          message: '"reactDirective" should not have a "value" property.',
@@ -67,9 +67,9 @@ ruleTester.run("react-directive-no-value-prop", rule, {
       },
       {
         code: `
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, ['value']);
-          const otherFunction = () => somethingElse(BrandSelector, [
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, ['value']);
+          const otherFunction = () => somethingElse(Selector, [
             'value',
             'test',
             'prop',
@@ -83,8 +83,8 @@ ruleTester.run("react-directive-no-value-prop", rule, {
       {
         code: `
           const properties = ['value'];
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, properties);
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, properties);
         `,
         errors: [{
          message: '"reactDirective" should not have a "value" property.',
@@ -98,8 +98,8 @@ ruleTester.run("react-directive-no-value-prop", rule, {
             'test',
             'prop',
           ];
-          const ReactBrandSelector = reactDirective =>
-            reactDirective(BrandSelector, properties);
+          const ReactSelector = reactDirective =>
+            reactDirective(Selector, properties);
         `,
         errors: [{
          message: '"reactDirective" should not have a "value" property.',

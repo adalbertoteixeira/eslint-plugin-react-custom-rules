@@ -1,5 +1,8 @@
 # eslint-plugin-react-custom-rules
 
+[![view on npm](http://img.shields.io/npm/v/eslint-plugin-react-custom-rules.svg?style=flat)](https://www.npmjs.com/package/eslint-plugin-react-custom-rules)
+[![Build Status](https://semaphoreci.com/api/v1/adalbertoteixeira/eslint-plugin-react-custom-rules/branches/master/shields_badge.svg)](https://semaphoreci.com/adalbertoteixeira/eslint-plugin-react-custom-rules)
+
 A collection of rules specific to a custom workflow and pattern.
 
 ## Installation
@@ -56,3 +59,7 @@ Then configure the rules you want to use under the rules section.
 ## Supported Rules
 
   - `react-directive-no-value-prop`
+
+## Notes
+
+Built with [yeoman eslint generator](https://github.com/eslint/generator-eslint).

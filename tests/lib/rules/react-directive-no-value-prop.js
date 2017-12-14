@@ -50,6 +50,18 @@ ruleTester.run("react-directive-no-value-prop", rule, {
           const ReactSelector = reactDirective =>
             reactDirective(value, properties);
         `,
+      },
+      {
+        code: `
+          const array = ['value'];
+          const ReactSelector = () => debug(value, array);
+        `,
+      },
+      {
+        code: `
+          const array = ['value'];
+          const ReactSelector = () => debug(value);
+        `,
       }
     ],
 

@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-custom-rules",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of rules specific to a custom workflow and pattern.",
   "keywords": [
     "eslint",

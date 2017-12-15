@@ -18,7 +18,7 @@ RuleTester = require("eslint").RuleTester;
 //------------------------------------------------------------------------------
 
 // var ruleTester = new RuleTester();
-const ruleTester = new RuleTester({parserOptions: { ecmaVersion: 2017 }});
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 2017 } });
 ruleTester.run("react-directive-no-value-prop", rule, {
 
     valid: [

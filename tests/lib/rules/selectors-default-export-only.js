@@ -18,12 +18,18 @@ var rule = require("../../../lib/rules/selectors-default-export-only"),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 2017, sourceType: 'module' } });
-ruleTester.run("default-selectors-export", rule, {
+ruleTester.run("selectors-default-export-only", rule, {
   valid: [{
     code: "export const customSelector = state => stat.deliverables;",
     filename: "/some/dir/nota-a-selector-file.js",
   }, {
     code: 'export default { list: selectList };',
+    filename: "/some/dir/selectors.js",
+  }, {
+    code: `
+      import crudSelectors from '@store/utils/selectors/crudSelectors';
+      export default { list: selectList };
+    `,
     filename: "/some/dir/selectors.js",
   }],
 

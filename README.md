@@ -39,9 +39,9 @@ Add `react-custom-rules` to the plugins section of your `.eslintrc` configuratio
 
 ```json
 {
-    "plugins": [
-        "react-custom-rules"
-    ]
+  "plugins": [
+    "react-custom-rules"
+  ]
 }
 ```
 
